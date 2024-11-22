@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Modak&display=swap');
+
+nav{
+    width: 300px;
+    height: 30px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0.5em;
+}
+
+.burguer_menu {
+    height: 90%;
+    width: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.burguer-bar{
+    width: 2em;
+    height: 0.3em;
+    background: rgba(255, 255, 255, 0.783);
+    border-radius: 0.2em;
+}
+
+.menu{
+    width: 28%;
+    height: 100vh;
+    background-color: rgba(94, 181, 181, 0.927);
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding-top: 4%;
+}
+
+.history_info_cards{
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    width: 75%;
+    margin-top: 3%;
+    margin-left: 10%;
+    background-color: rgba(8, 107, 107, 0.525);
+    gap: 5%;
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #f5f5f5;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+.img_cloud{
+    height: 45px;
+    margin-left: 2%;
+}
+
+.temperature_history{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: end;
+    padding-top: 2%;
+    margin-bottom: 8%;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.date_hour_history{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    margin-top: 3%;
+}
+
+.date_history{
+    margin-bottom: 10%;
+    font-size: 14px;
+}
+
+.hour_history{
+    font-size: 14px;
+}
+
+.humidity_temperature_history{
+    margin-top: 1%;
+    margin-left: 20%;
+}
+
+.humidity_history{
+    display: flex;
+    flex-direction: row;
+}
+
+.icon_humidity_history{
+    height: 18px;
+
+}
+
+.title_history{
+    margin-left: 12%;
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.756);
+    font-size: 20px;
+    margin-top: 1%;
+}
+
+.hidden{
+    display: none;
+}
+
+.visible{
+    display: inherit;
+}
+
+.burguer-bar.clicked:nth-child(1){
+    transform: rotate(45deg) translate(0.3em, 0.8em);
+    transition: ease-out 0.5s;
+}
+
+.burguer-bar.clicked:nth-child(2){
+    transform: scale(0.1);
+    transition: ease-out 0.5s;
+}
+
+.burguer-bar.clicked:nth-child(3){
+    transform: rotate(135deg) translate(-0.2em, 0.6em);
+    transition: ease-out 0.5s;
+}
+
+.burguer-bar.unclicked {
+    transform: rotate(0) translate(0);
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+}

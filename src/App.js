@@ -8,6 +8,7 @@ import sun_big_cloud from '../src/img/sun-big-cloud.svg'
 import sun_small_cloud from '../src/img/sun-small-cloud.svg'
 import cloud from '../src/img/cloud.svg'
 import Loading from './components/loading';
+import History from './components/history';
 
 export default function ViewWeather() {
   const [data, setData] = useState([]);
@@ -42,10 +43,15 @@ export default function ViewWeather() {
   }, []);
 
   return (
+    
     <div className='container'>
+      <History />
       {data ? (
         <div className='card_main'>
           <img className='img_' src={icon} alt='Imagem referente a temperatura'/>
+          <section className='info_date_hour'>
+             <p>{data.date} | {data.hour}</p>
+          </section>
           <section className='info_card'>
               <section className='info_humidity'>
                 <img className='icon_humidity' src={humidity} />
