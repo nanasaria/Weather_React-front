@@ -1,4 +1,4 @@
-## Available Scripts
+## Run project
 
 In the project directory, you can run:
 
