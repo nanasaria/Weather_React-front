@@ -6,9 +6,8 @@
 }
 
 body{
-  overflow-x: hidden;
-  overflow-y: hidden;
   background-color: rgb(212, 209, 209);
+  overflow-y: hidden;
 }
 
 .container {
@@ -16,6 +15,8 @@ body{
   border: none;
   height: 100vh;
   width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .card_main{

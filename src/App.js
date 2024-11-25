@@ -37,10 +37,28 @@ export default function ViewWeather() {
       }
     };
 
+    const connectionWs = () => {
+      const ws = new WebSocket('ws://localhost:3004');
+      ws.onmessage = (event) => {
+          try {
+              const { event: eventType } = JSON.parse(event.data);
+              if (eventType === 'update') {
+                  fetchData(); 
+              }
+          } catch (err) {
+              console.error('Erro ao processar mensagem real time:', err);
+          }
+      };
+      return () => {
+          ws.close();
+      };
+    }
+
     fetchData();
-    const intervalId = setInterval(fetchData, 10000);
-    return () => clearInterval(intervalId);
-  }, []);
+    connectionWs();
+}, []);
+
+  
 
   return (
     

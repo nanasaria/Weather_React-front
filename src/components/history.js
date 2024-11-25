@@ -26,11 +26,29 @@ const History = () => {
     const fetchData = async () => {
         const response = await axios.get('http://localhost:3004/listWeather');
         const weatherData = Object.values(response.data);
-        const weatherSorted = weatherData.reverse()
-        setData(weatherSorted)
+        const weatherSorted = weatherData.reverse().slice(0, 6);
+        setData(weatherSorted);
     };
 
+    const connectionWs = () => {
+      const ws = new WebSocket('ws://localhost:3004');
+      ws.onmessage = (event) => {
+          try {
+              const { event: eventType } = JSON.parse(event.data);
+              if (eventType === 'update') {
+                  fetchData(); 
+              }
+          } catch (err) {
+              console.error('Erro ao processar mensagem real time:', err);
+          }
+      };
+      return () => {
+          ws.close();
+      };
+    }
+
     fetchData();
+    connectionWs();
   }, []);
 
   return (
